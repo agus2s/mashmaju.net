@@ -290,6 +290,12 @@ $berita = ambil_berita($cfg);
   .item .jdl{font-size:.97rem;font-weight:700;line-height:1.35;margin-top:2px}
   .item .rgk{font-size:.82rem;color:#475569;line-height:1.4;margin-top:4px}
   .item.tanpa-gambar .isi{padding:14px 18px}
+  .qrcode{display:none}
+  @media (min-width:768px){
+    .qrcode{display:block;margin:30px auto 0;color:var(--muted);font-size:.88rem}
+    .qrcode .alamat-web{color:var(--yellow);font-weight:600}
+    .qrcode img{display:block;width:144px;height:144px;margin:0 auto 10px;padding:8px;background:#fff;border-radius:12px}
+  }
   .kosong{background:rgba(255,255,255,.12);border-radius:14px;padding:16px;color:var(--muted);font-size:.92rem;text-align:center}
   .semua{
     display:inline-block;margin-top:6px;color:var(--yellow);font-weight:600;
@@ -352,6 +358,11 @@ $berita = ambil_berita($cfg);
   <?php foreach ($cfg['grup']['tombol'] as $t): ?>
     <a class="link" href="<?= e($t['url']) ?>" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot map-icon" aria-hidden="true"></i><?= e($t['teks']) ?></a>
   <?php endforeach; ?>
+
+  <div class="qrcode">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=https%3A%2F%2Fmashmaju.net" alt="QR code untuk membuka mashmaju.net" width="144" height="144" loading="lazy">
+    <div class="alamat-web">Alamat web ini: mashmaju.net</div>
+  </div>
 
   <footer>&copy; <?= date('Y') ?> <?= e($cfg['nama']) ?></footer>
 </main>
