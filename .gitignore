@@ -1,0 +1,19 @@
+# Cache berita yang dibuat otomatis oleh aplikasi
+/cache_berita.json
+
+# Konfigurasi lokal dan rahasia
+.env
+.env.*
+!.env.example
+
+# Log dan file sementara
+*.log
+*.tmp
+*.temp
+
+# File sistem operasi dan editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
